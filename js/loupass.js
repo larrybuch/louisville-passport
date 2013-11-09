@@ -55,27 +55,11 @@ function buildList(){
 	for (var i=0; i<venues.length; i++){
 		if (venues[i].beenHere === true) {
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="yes">yes</p> </div> <img src="' +
-				venues[i].Photo +
-				'" /><h2>' +
-				venues[i].name +
-				'</h2><p class="label">about</p><p class="description">' +
-				venues[i].Description
-				+ '</p><div class="button checkin" data-venueid=' 
-				+ venues[i].VenueID
-				+ '>check-in</div></div>');
+				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="yes">yes</p> </div> <img src="' + venues[i].Photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' +venues[i].Description + '<p class="label">address</p><p class="description">' + venues[i].Address + '</p><div class="button checkin" data-venueid='+ venues[i].VenueID + '>check-in</div></div>');
 
 		} else {
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="no">no</p> </div> <img src="' +
-				venues[i].Photo +
-				'" /><h2>'+
-				venues[i].name +
-				'</h2><p class="label">about</p><p class="description">' +
-				venues[i].Description
-				+ '</p><div class="button checkin" data-venueid=' 
-				+ venues[i].VenueID
-				+ '>check-in</div></div>');
+				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="no">no</p> </div> <img src="' + venues[i].Photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].Description + '</p><div class="button checkin" data-venueid=' + venues[i].VenueID + '>check-in</div></div>');
 		}
 	}
 	checkin();
@@ -102,7 +86,7 @@ function dashboard(){
 		}
 	}
 	$('.badges').append('<br><div class="button print"><h5>Print My Badges!</h5></div>');
-	printBadges();
+	// printBadges();
 }
 
 var checkin_id, check;
@@ -122,17 +106,14 @@ function checkin() {
 	})
 }
 
+var oldPage;
 function printBadges(){
-	$('.print').click(function(){
-    var badges = $('.badges').html();
-    console.log(badges);
-    var page = document.body.innerHTML;
-    document.body.innerHTML = 
-      "<html><head><title></title></head><body>" + 
-      badges + "</body>";
-    window.print();
-    document.body.innerHTML = page;
-	})
+  var badges = $('.badges').html();
+  oldPage = $('body').html();
+  $('body').html("<html><head><title></title></head><body>" + badges + "</body>");
+  window.print();
+  location.reload();
+  $('#dashboard').click();
 }
 
 $(document).ready(function(){
