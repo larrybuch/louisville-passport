@@ -14,6 +14,11 @@ h1{
   color: #fff;
 }
 
+h3{
+  font-size: 1.4em;
+  line-height: 1.2;
+}
+
 .button{
   font-family: "rooney-sans",sans-serif;
   font-weight: 900;
@@ -37,11 +42,25 @@ h1{
 }
 
 .header{
+  margin-top: 30px;
   text-align: center;
 }
 
 .header .button{
   margin: 0 auto;
+}
+
+.header a{
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+.header p{
+  margin-top: 10px;
+}
+
+.header a:hover{
+  color: #ecf0f1;
 }
 
 table{
@@ -52,10 +71,7 @@ tr{
   border-top: 1px solid #ecf0f1;
 }
 
-
-
 /* PAGE TOP STYLES */
-
 .page-top{
   margin-top: 20px;
   padding-bottom: 8px;
@@ -79,6 +95,7 @@ a h4{
 
 .switch{
   float: right;
+  margin-top: 7px;
 }
 
 .switch ul li{
