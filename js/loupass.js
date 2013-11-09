@@ -52,7 +52,11 @@ function checkPlace(){
 function buildList(){
 	$('.list table').append('<tr><td>Place</td><td>Been there?</td></tr>')
 	for (var i=0; i<venues.length; i++){
-		$('.list table').append('<tr><td>' + venues[i].name + '</td><td>' + venues[i].beenHere + '</td></tr>')
+		if (venues[i].beenHere === true) {
+			$('.list table').append('<tr><td>' + venues[i].name + '</td><td>PUT A REAL BADGE HERE</td></tr>')
+		} else {
+			$('.list table').append('<tr><td>' + venues[i].name +'</td><td>PUT A PLACEHOLDER HERE</td></tr>')
+		}
 	}
 }
 
