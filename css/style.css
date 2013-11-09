@@ -79,7 +79,7 @@ tr{
 /* PAGE TOP STYLES */
 .page-top{
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding-bottom: 8px;
   border-bottom: 4px solid #c0392b;
 }
@@ -129,6 +129,7 @@ a h4{
   border-bottom: 4px solid #bdc3c7;
   border-radius: 3px;
   transition: .2s all;
+  height: 650px;
 }
 
 .venue:hover{
