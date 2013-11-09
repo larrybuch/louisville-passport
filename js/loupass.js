@@ -135,7 +135,7 @@ function checkin() {
 						checkin_badge = badges[i].link;
 					}
 				}
-				$('#overlay').html('<p><a href="javascript:close()" style="font-weight: bolder; float:right;">x</a></p><br><h5>Congratulations!</h5><p>You just earned the </p><img src="'+ checkin_badge + '" width="200" /><p>' + checkin_category + ' badge</p><p> for checking into ' + check.response.checkin.venue.name + ' through LouPass! <br><br>');
+				$('#overlay').html('<p><a href="javascript:close()" style="float:right; font-size: 20px; margin: 28px;">x</a></p><br><br><br><h5>Congratulations!</h5><p>You just earned the </p><img src="'+ checkin_badge + '" width="200" /><p>' + checkin_category + ' badge</p><p> for checking into ' + check.response.checkin.venue.name + ' through LouPass! <br><br>');
 				overlay();
 			}
 		})
