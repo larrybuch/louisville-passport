@@ -47,6 +47,7 @@ function checkPlace(){
 		}
 	}	
 	buildList();
+	showPlaces();
 }
 
 function buildList(){
@@ -54,6 +55,7 @@ function buildList(){
 	for (var i=0; i<venues.length; i++){
 		if (venues[i].beenHere === true) {
 			$('.list table').append('<tr><td>' + venues[i].name + '</td><td>PUT A REAL BADGE HERE</td></tr>')
+
 		} else {
 			$('.list table').append('<tr><td>' + venues[i].name +'</td><td>PUT A PLACEHOLDER HERE</td></tr>')
 		}
@@ -69,6 +71,18 @@ function toggleViews(){
 		$('.list').css('display', 'none');
 		$('.dashboard').css('display', 'block');
 	});
+}
+
+function showBadges(){
+
+}
+
+function showPlaces(){
+	for (var i=0; i<venues.length; i++){
+		if (venues[i].beenHere === true) {
+			$(".visited ul").append('<li>' + venues[i].name + '</li>');
+		}
+	}
 }
 
 $(document).ready(function(){
