@@ -145,7 +145,7 @@ a h4{
   border-bottom: 4px solid #bdc3c7;
   border-radius: 3px;
   transition: .2s all;
-  height: 650px;
+  height: 680px;
 }
 
 .venue:hover{
@@ -187,6 +187,10 @@ a h4{
   font-size: 14px;
   color: #7f8c8d;
   margin-top: 10px;
+}
+a.label {
+  text-decoration: none;
+  margin-top: 20px;
 }
 
 .tag{
@@ -326,13 +330,8 @@ footer{
   display: inline;
 }
 
-.description a{
-  text-decoration: none;
-  color: #2c3e50;
-}
-
-.description a:hover{
-  color: #7f8c8d;
+.description {
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 767px){
