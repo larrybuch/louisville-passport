@@ -81,11 +81,11 @@ function buildList(){
 				}
 			}
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="yes">yes</p><p class="category-name">'+  venues[i].category + '</p><img src="' + venues[i].badgelink +'" width="20" class="small-badge" /></div> <img src="' + venues[i].photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><div class="button checkin" data-venueid='+ venues[i].VenueID + '>check-in</div></div>');
+				'<div class="venue one-third column"> <div class="tag"><p class="category-name">'+  venues[i].category + '</p><img src="' + venues[i].badgelink +'" width="20" class="small-badge" /></div> <img src="' + venues[i].photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><div class="button checkin" data-venueid='+ venues[i].VenueID + '>check-in</div></div>');
 
 		} else {
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="no">no</p><p class="category-name">'+  venues[i].category + '</p><img src="' + venues[i].badgelink +'" width="20" class="small-badge grayscale" /></div> <img src="' + venues[i].photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><div class="button checkin" data-venueid=' + venues[i].VenueID + '>check-in</div></div>');
+				'<div class="venue one-third column"> <div class="tag"><p class="category-name">'+  venues[i].category + '</p><img src="' + venues[i].badgelink +'" width="20" class="small-badge grayscale" /></div> <img src="' + venues[i].photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><div class="button checkin" data-venueid=' + venues[i].VenueID + '>check-in</div></div>');
 		}
 	}
 	checkin();
