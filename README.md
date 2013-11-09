@@ -8,7 +8,11 @@ LouPass
 LouPass uses the Foursquare API to let families and kids explore the city of Louisville and earn SUPER COOL badges.
 
 
-Check out our [live demo](https://www.loupass.com)
+Check out our [live demo](https://www.loupass.com).
+
+
+
+___
 
 
 [Hacktucky](http://www.hacktucky.com/)
