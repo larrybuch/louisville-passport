@@ -63,7 +63,7 @@ function buildList(){
 				venues[i].Description
 				+ '</p><div class="button"id="checkin" data-venueid=' 
 				+ venues[i].VenueID
-				+ '</p><div class="button">check-in</div></div>');
+				+ '>check-in</div></div>');
 
 		} else {
 			$('.container').append(
@@ -75,7 +75,7 @@ function buildList(){
 				venues[i].Description
 				+ '</p><div class="button"id="checkin" data-venueid=' 
 				+ venues[i].VenueID
-				+ '</p><div class="button">check-in</div></div>');
+				+ '>check-in</div></div>');
 		}
 	}
 	checkin();
