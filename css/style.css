@@ -1,5 +1,7 @@
 body{
   background-color: #e74c3c;
+  font-family: "rooney-web",sans-serif;
+  line-height: 1.5;
 }
 
 h1{
@@ -7,4 +9,22 @@ h1{
   font-size: 4em;
   font-weight: 900;
   letter-spacing: -1px;
+  color: #fff;
+}
+
+.button{
+  font-family: "rooney-sans",sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background-color: #34495e;
+  padding: 20px;
+  border-radius: 4px;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button:hover{
+  background-color: #2c3e50;
 }
