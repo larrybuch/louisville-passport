@@ -110,9 +110,9 @@ function dashboard(){
 	}
 	for (var j=0; j<badges.length; j++){
 		if (badges[j].count > 0){
-			$('.myBadges').append('<img src=' + badges[j].link + ' width="200" />');
-		} else {
-			$('.moreBadges').append('<img src=' + badges[j].link + ' width="80" class="grayscale" style="opacity: 0.2" />');
+			  $('.myBadges').append('<div class="badge-box"> <img src=' + badges[j].link + ' width="80" /> </div>');
+			} else {
+			  $('.moreBadges').append('<div class="badge-box"> <img src=' + badges[j].link + ' width="80" class="grayscale" style="opacity: 0.2" /> </div>');
 		}
 	}
 	$('.badges').append('<br><div class="button print" onClick="printBadges()"><h5>Print My Badges!</h5></div>');
