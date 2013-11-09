@@ -81,10 +81,10 @@ function buildList(){
 				}
 			}
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"><img src="' + venues[i].badgelink +'" width="20" class="small-badge" /><p class="category-name done">'+  venues[i].category + '</p></div> <img src="' + venues[i].photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '  <a href="' + venues[i].hours + '">Details</a></p><div class="button beenthere" data-venueid=' + venues[i].venueid + ' data-category=' + venues[i].category + '>DONE</div></div>');
+				'<div class="venue one-third column"> <div class="tag"><img src="' + venues[i].badgelink +'" width="20" class="small-badge" /><p class="category-name done">'+  venues[i].category + '</p></div> <img src="' + venues[i].photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><a href="' + venues[i].hours + '" class="label">Details</a><div class="button beenthere" data-venueid=' + venues[i].venueid + ' data-category=' + venues[i].category + '>DONE</div></div>');
 		} else {
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"><img src="' + venues[i].badgelink +'" width="20" class="small-badge grayscale" /><p class="category-name">'+  venues[i].category + '</p></div> <img src="' + venues[i].photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><div class="button checkin" data-venueid=' + venues[i].venueid + ' data-category=' + venues[i].category + '>check-in</div></div>');
+				'<div class="venue one-third column"> <div class="tag"><img src="' + venues[i].badgelink +'" width="20" class="small-badge grayscale" /><p class="category-name">'+  venues[i].category + '</p></div> <img src="' + venues[i].photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><p class="label"><a href="' + venues[i].hours + '" >Details</a></p><div class="button checkin" data-venueid=' + venues[i].venueid + ' data-category=' + venues[i].category + '>check-in</div></div>');
 		}
 	}
 	checkin();
