@@ -50,6 +50,11 @@ function checkPlace(){
 			}
 		}
 	}
+	for (var i=0; i<venues.length; i++){
+		if(venues[i].beenHere === 0) {
+			venues[i].beenHere = false;
+		}
+	}
 	buildList();
 }
 
