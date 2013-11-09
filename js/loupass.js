@@ -69,7 +69,7 @@ function checkPlace(){
 }
 
 var category;
-var badges = [{'category': 'art', 'link': "/img/art.svg", 'count': 0}, {'category': 'business', 'link': "/img/business.svg", 'count': 0}, {'category': 'civic', 'link': "/img/civic.svg", 'count': 0}, {'category': 'culture', 'link': "/img/culture.svg", 'count': 0}, {'category': 'festival', 'link': "/img/festival.svg", 'count': 0}, {'category': 'science', 'link': "/img/science.svg", 'count': 0}, {'category': 'sports', 'link': "/img/sports.svg", 'count': 0}]
+var badges = [{'category': 'art', 'link': "../img/art.svg", 'count': 0}, {'category': 'business', 'link': "../img/business.svg", 'count': 0}, {'category': 'civic', 'link': "../img/civic.svg", 'count': 0}, {'category': 'culture', 'link': "../img/culture.svg", 'count': 0}, {'category': 'festival', 'link': "../img/festival.svg", 'count': 0}, {'category': 'science', 'link': "../img/science.svg", 'count': 0}, {'category': 'sports', 'link': "../img/sports.svg", 'count': 0}]
 function buildList(){
 	$('.list table').append('<tr><td>Place</td><td>Been there?</td></tr>')
 	for (var i=0; i<venues.length; i++){
