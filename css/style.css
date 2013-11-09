@@ -171,5 +171,32 @@ a h4{
   color: #7f8c8d;
 }
 
+.tag{
+  display: inline-block;
+}
+
+.tag p{
+  display: inline-block;
+  font-family: "rooney-sans",sans-serif;
+  font-weight: 900; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: #7f8c8d;
+  padding: 7px;
+  margin-bottom: 5px;
+  background-color: #bdc3c7;
+}
+
+.tag p.been{
+  background-color: #27ae60;
+  color: white;
+}
+
+
+
+
+
+
 
 
