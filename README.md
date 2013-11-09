@@ -5,4 +5,10 @@ LouPass
 
 #### LOUISVILLE’S NOT LAME. IT’S AWESOME.
 
-Using Foursquare API to let families and kids explore the city of Louisville and earn SUPER COOL badges. All data is stored through Foursquare user info. 
+LouPass uses the Foursquare API to let families and kids explore the city of Louisville and earn SUPER COOL badges.
+
+
+Check out our [live demo](https://www.loupass.com)
+
+
+[Hacktucky](http://www.hacktucky.com/)
