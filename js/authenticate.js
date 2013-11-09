@@ -15,7 +15,7 @@ function authenticateUser(){
 }
 
 function redirect(){
-	window.location = "/success/index.html" + "?access_token=" + access_token;
+	window.location = "/louisville-passport/success/index.html" + "?access_token=" + access_token;
 }
 
 $(document).ready(function(){
