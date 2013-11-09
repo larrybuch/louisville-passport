@@ -161,8 +161,8 @@ function printBadges(){
   $('body').html("<html><head><title></title></head><body>" + badges + "</body>");
   $('img').width(140);
   $('img').css('margin', '20px');
-  // window.print();
-  // $('body').html(oldPage);
+  window.print();
+  $('body').html(oldPage);
 }
 
 $(document).ready(function(){
