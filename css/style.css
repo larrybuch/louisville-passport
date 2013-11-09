@@ -190,6 +190,7 @@ a h4{
 
 .tag{
   display: inline-block;
+  margin-top: -10px;
 }
 
 .tag p{
@@ -241,6 +242,25 @@ footer{
 
 .small-badge {
   width: 30px !important;
+  display: inline-block;
+  position: relative;
+  top: 11px;
+  margin-left: 3px;
+}
+
+.category-name{
+  margin-left: 4px;
+}
+
+@media only screen and (max-width: 767px){
+  .venue{
+    height: auto;
+  }
 }
 
 
+@media only screen and (max-width: 420px) { 
+  h5{
+    font-size: 1.5em;
+  }
+}
