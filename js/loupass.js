@@ -11,7 +11,6 @@ window.onload = function() { init() };
   }
 
   function showInfo(data, tabletop) {
-    alert("Successfully processed!")
     venues = data;
     loupass();
   }
