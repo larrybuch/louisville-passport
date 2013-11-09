@@ -1,20 +1,17 @@
-//set up tabletop
-
 var venues;
 window.onload = function() { init() };
-  var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Au6tPA8zI59ndGFLMGNUajg4OWk3Q3E1V3V2X2hpZFE&single=true&gid=0&output=html';
+var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Au6tPA8zI59ndGFLMGNUajg4OWk3Q3E1V3V2X2hpZFE&single=true&gid=0&output=html';
 
-  function init() {
-    Tabletop.init( { key: public_spreadsheet_url,
-                     callback: showInfo,
-                     simpleSheet: true } )
-  }
+function init() {
+  Tabletop.init( { key: public_spreadsheet_url,
+                   callback: showInfo,
+                   simpleSheet: true } )
+}
 
-  function showInfo(data, tabletop) {
-    venues = data;
-    loupass();
-  }
-
+function showInfo(data, tabletop) {
+  venues = data;
+  loupass();
+}
 
 var user_access_token = window.location.search.substring(14);
 var user_info, user_id, first_name, last_name, venue_history;
@@ -151,7 +148,6 @@ function close() {
   document.getElementById("overlay").style.visibility = 'hidden';
   location.reload();
 }
-
 
 var oldPage;
 function printBadges(){
