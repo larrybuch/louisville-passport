@@ -9,7 +9,7 @@ body{
   line-height: 1.5;
   color: #ecf0f1;
   border-top: 10px solid #ecf0f1;
-}
+} 
 
 h1{
   font-family: "rooney-sans",sans-serif;
@@ -294,6 +294,14 @@ footer{
 #overlay a:hover {
   text-decoration: none;
   color: #95a5a6;
+}
+
+#red{
+  color: #e74c3c;
+}
+
+.badge-row{
+  text-align: center;
 }
 
 @media only screen and (max-width: 767px){
