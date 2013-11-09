@@ -65,27 +65,26 @@ function buildList(){
 	checkin();
 }
 
-function toggleViews(){
-	$('#list').click(function(){
+function toggleViews(input){
+	if (input === 'list') {
 		$('.dashboard').css('display', 'none');
 		$('.list').css('display', 'block');
 		$('.venue').css('display', 'block');
-	});
-	$('#dashboard').click(function(){
+	} else if (input === 'dashboard') {
 		$('.venue').css('display', 'none');
 		$('.list').css('display', 'none');
 		$('.dashboard').css('display', 'block');
-	});
-}
+	}
+};
 
 function dashboard(){
 	for (var i=0; i<venues.length; i++){
 		if (venues[i].beenHere === true) {
 			$(".visited ul").append('<li>' + venues[i].name + '</li>');
-			$('.badges').append('<img src=' + venues[i].link + ' width="80" />');
+			$('.badgesIcon').append('<img src=' + venues[i].badgeLink + ' width="80" />');
 		}
 	}
-	$('.badges').append('<br><div class="button print"><h5>Print My Badges!</h5></div>');
+	$('.badges').append('<br><div class="button print" onClick="printBadges()"><h5>Print My Badges!</h5></div>');
 	// printBadges();
 }
 
@@ -101,6 +100,7 @@ function checkin() {
 			success:function(data){
 				check = data;
 				alert('you checked in to here!');
+				location.reload();
 			}
 		})
 	})
@@ -108,12 +108,11 @@ function checkin() {
 
 var oldPage;
 function printBadges(){
-  var badges = $('.badges').html();
+  var badges = $('.badgesIcon').html();
   oldPage = $('body').html();
   $('body').html("<html><head><title></title></head><body>" + badges + "</body>");
   window.print();
-  location.reload();
-  $('#dashboard').click();
+  $('body').html(oldPage);
 }
 
 $(document).ready(function(){

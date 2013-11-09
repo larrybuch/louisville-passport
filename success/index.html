@@ -10,6 +10,9 @@
   <script src="/js/jquery.min.js"></script>
   <script type="text/javascript" src="//use.typekit.net/nxp4xpr.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script src="/js/oauth.js"></script>
+	<script src="/js/louplaces.js"></script>
+	<script src="/js/loupass.js"></script>
 </head>
 <body>
   <div class="container">
@@ -19,8 +22,8 @@
       </a>
       <div class="switch">
         <ul>
-          <li><a href="#" id="list">List</a></li>
-          <li><a href="#" id="dashboard">Dashboard</a></li>
+          <li><a href="#" id="list" onclick="toggleViews('list')">List</a></li>
+          <li><a href="#" id="dashboard" onclick="toggleViews('dashboard')">Dashboard</a></li>
         </ul>
       </div>
     </div> <!-- END PAGE TOPPPER -->
@@ -31,16 +34,9 @@
     </div>
 
     <div class="dashboard" style="display:none;">
-    	<div class="badges" onClick="printBadges()">
+    	<div class="badges">
     		<h1>Badges</h1>
-        <img src="../img/art.svg" alt="">
-        <img src="../img/business.svg" alt="">
-        <img src="../img/civic.svg" alt="">
-        <img src="../img/culture.svg" alt="">
-        <img src="../img/festival.svg" alt="">
-        <img src="../img/science.svg" alt="">
-        <img src="../img/sports.svg" alt="">
-
+    		<div class="badgesIcon"></div>
     	</div>
   		<div class="visited">
   			<h1>Places I've been to</h1>
@@ -49,8 +45,5 @@
   	</div>
 
   </div>
-	<script src="/js/oauth.js"></script>
-	<script src="/js/louplaces.js"></script>
-	<script src="/js/loupass.js"></script>
 </body>
 </html>
