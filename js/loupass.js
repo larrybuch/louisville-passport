@@ -14,6 +14,10 @@ var venues = [
 	{name: "Louisville Mega Cavern", beenHere: 0}
 ]
 
+function loupass(){
+	getUser();
+}
+
 function getUser(){
 	$.ajax({
 		type: "GET",
@@ -59,11 +63,12 @@ function checkPlace(){
 }
 
 function buildList(){
+	$('.list table').append('<tr><td>Place</td><td>Been there?</td></tr>')
 	for (var i=0; i<venues.length; i++){
 		$('.list table').append('<tr><td>' + venues[i].name + '</td><td>' + venues[i].beenHere + '</td></tr>')
 	}
 }
 
 $(document).ready(function(){
-	getUser();
+	loupass();
 });
