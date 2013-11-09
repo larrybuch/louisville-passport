@@ -260,6 +260,7 @@ footer{
 
 .beenthere {
   background-color: #bdc3c7 !important;
+  border-bottom-color: #bdc3c7 !important;
 }
 
 #overlay {
@@ -300,7 +301,7 @@ footer{
   color: #e74c3c;
 }
 
-.badges h3, .visited h3{
+.badges h3, .visited h3, .list h3{
   margin: 40px 0;
 }
 
