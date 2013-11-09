@@ -19,7 +19,7 @@ function redirect(){
 }
 
 $(document).ready(function(){
-	$('.box').click(function(){
+	$('#signin').click(function(){
 		authenticateUser();
 	})
 });
