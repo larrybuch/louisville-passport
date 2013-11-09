@@ -84,7 +84,7 @@ function buildList(){
 				'<div class="venue one-third column"> <div class="tag"><img src="' + venues[i].badgelink +'" width="20" class="small-badge" /><p class="category-name done">'+  venues[i].category + '</p></div> <img src="' + venues[i].photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><a href="' + venues[i].hours + '" class="label">More details</a><div class="button beenthere" data-venueid=' + venues[i].venueid + ' data-category=' + venues[i].category + '>DONE</div></div>');
 		} else {
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"><img src="' + venues[i].badgelink +'" width="20" class="small-badge grayscale" /><p class="category-name">'+  venues[i].category + '</p></div> <img src="' + venues[i].photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><p class="label"><a href="' + venues[i].hours + '" >More details</a></p><div class="button checkin" data-venueid=' + venues[i].venueid + ' data-category=' + venues[i].category + '>check-in</div></div>');
+				'<div class="venue one-third column"> <div class="tag"><img src="' + venues[i].badgelink +'" width="20" class="small-badge grayscale" /><p class="category-name">'+  venues[i].category + '</p></div> <img src="' + venues[i].photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><p class="label"><a href="' + venues[i].hours + '" class="label">More details</a></p><div class="button checkin" data-venueid=' + venues[i].venueid + ' data-category=' + venues[i].category + '>check-in</div></div>');
 		}
 	}
 	checkin();
@@ -130,13 +130,12 @@ function checkin() {
 			dataType: "json",
 			success:function(data){
 				check = data;
-				// $('#overlay').html('You just checked in ' + check.response.checkin.venue.name + ' through LouPass! <br>Congratulations! You have just earned a ' + checkin_category + ' badge!<p><a href="javascript:close()">Close</a></p>');
 				for (var i = 0; i<badges.length; i++) {
 					if (checkin_category === badges[i].category) {
 						checkin_badge = badges[i].link;
 					}
 				}
-				$('#overlay').html('<h5>Congratulations!</h5><p>You just earned the </p><img src="'+ checkin_badge + '" width="200" /><p>' + checkin_category + ' badge</p><p> for checking into ' + check.response.checkin.venue.name + ' through LouPass! <br><br><p><a href="javascript:close()">Close</a></p>');
+				$('#overlay').html('<p><a href="javascript:close()" style="font-weight: bolder; float:right;">x</a></p><br><h5>Congratulations!</h5><p>You just earned the </p><img src="'+ checkin_badge + '" width="200" /><p>' + checkin_category + ' badge</p><p> for checking into ' + check.response.checkin.venue.name + ' through LouPass! <br><br>');
 				overlay();
 			}
 		})
