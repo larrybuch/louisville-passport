@@ -45,7 +45,7 @@ function checkPlace(){
 		if(venues[i].beenHere === 0) {
 			venues[i].beenHere = false;
 		}
-	}
+	}	
 	buildList();
 }
 
@@ -73,4 +73,5 @@ function toggleViews(){
 
 $(document).ready(function(){
 	loupass();
+	toggleViews();
 });
