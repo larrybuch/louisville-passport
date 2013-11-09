@@ -54,12 +54,13 @@ function buildList(){
 	$('.list table').append('<tr><td>Place</td><td>Been there?</td></tr>')
 	for (var i=0; i<venues.length; i++){
 		if (venues[i].beenHere === true) {
-			$('.container').append('<div class="venue four columns"><p>BEEN THERE DONE THAT</p><img src="' + venues[i].Photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].Description + '</p><div class="button">check-in</div></div>');
+			$('.container').append('<div class="venue four columns"><p>BEEN THERE DONE THAT</p><img src="' + venues[i].Photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].Description + '</p><div class="button" id="checkin" data-id=' + venues[i].VenueID + '>check-in</div></div>');
 
 		} else {
-			$('.container').append('<div class="venue four columns"><img src="' + venues[i].Photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].Description + '</p><div class="button">check-in</div></div>');
+			$('.container').append('<div class="venue four columns"><img src="' + venues[i].Photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].Description + '</p><div class="button" id="checkin" data-id=' + venues[i].VenueID + '>check-in</div></div>');
 		}
 	}
+	checkin();
 }
 
 function toggleViews(){
@@ -80,6 +81,21 @@ function dashboard(){
 			$('.badges').append('<img src=' + venues[i].link + ' width="80" />');
 		}
 	}
+}
+
+var checkin_id;
+function checkin() {
+	$('#checkin').click(function(){
+		checkin_id = $(this).getAttribute("data-id");
+		console.log(checkin_id)
+		$.ajax({
+			type: "GET",
+			url: "https://api.foursquare.com/v2/users/" + user_id + "/venuehistory?oauth_token=" + user_access_token,
+			dataType: "json",
+			success:function(data){
+				}
+		})
+	})
 }
 
 $(document).ready(function(){
