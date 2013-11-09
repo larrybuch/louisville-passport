@@ -81,7 +81,7 @@ function buildList(){
 				}
 			}
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"><img src="' + venues[i].badgelink +'" width="20" class="small-badge" /><p class="category-name done">'+  venues[i].category + '</p></div> <img src="' + venues[i].photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><div class="button beenthere">DONE</div></div>');
+				'<div class="venue one-third column"> <div class="tag"><img src="' + venues[i].badgelink +'" width="20" class="small-badge" /><p class="category-name done">'+  venues[i].category + '</p></div> <img src="' + venues[i].photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '  <a href="' + venues[i].hours + '">Details</a></p><div class="button beenthere checkin" data-venueid=' + venues[i].venueid + ' data-category=' + venues[i].category + '>DONE</div></div>');
 		} else {
 			$('.container').append(
 				'<div class="venue one-third column"> <div class="tag"><img src="' + venues[i].badgelink +'" width="20" class="small-badge grayscale" /><p class="category-name">'+  venues[i].category + '</p></div> <img src="' + venues[i].photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><div class="button checkin" data-venueid=' + venues[i].venueid + ' data-category=' + venues[i].category + '>check-in</div></div>');
@@ -110,15 +110,15 @@ function dashboard(){
 	}
 	for (var j=0; j<badges.length; j++){
 		if (badges[j].count > 0){
-			$('.myBadges').append('<div class="badge-box"> <img src=' + badges[j].link + ' width="80" /> </div>');
+			$('.myBadges').append('<img src=' + badges[j].link + ' width="200" />');
 		} else {
-			$('.moreBadges').append('<div class="badge-box"> <img src=' + badges[j].link + ' width="80" class="grayscale" style="opacity: 0.2" /> </div>');
+			$('.moreBadges').append('<img src=' + badges[j].link + ' width="80" class="grayscale" style="opacity: 0.2" />');
 		}
 	}
 	$('.badges').append('<br><div class="button print" onClick="printBadges()"><h5>Print My Badges!</h5></div>');
 }
 
-var checkin_id, check, checkin_category;
+var checkin_id, check, checkin_category, checkin_badge;
 function checkin() {
 	$('.checkin').click(function(){
 		checkin_id = $(this).data("venueid");
@@ -130,7 +130,13 @@ function checkin() {
 			dataType: "json",
 			success:function(data){
 				check = data;
-				$('#overlay').html('You just checked in ' + check.response.checkin.venue.name + ' through LouPass! <br>Congratulations! You have just earned a ' + checkin_category + ' badge!<p><a href="javascript:close()">Close</a></p>');
+				// $('#overlay').html('You just checked in ' + check.response.checkin.venue.name + ' through LouPass! <br>Congratulations! You have just earned a ' + checkin_category + ' badge!<p><a href="javascript:close()">Close</a></p>');
+				for (var i = 0; i<badges.length; i++) {
+					if (checkin_category === badges[i].category) {
+						checkin_badge = badges[i].link;
+					}
+				}
+				$('#overlay').html('<h5>Congratulations!</h5><p>You just earned the </p><img src="'+ checkin_badge + '" width="200" /><p>' + checkin_category + ' badge</p><p> for checking into ' + check.response.checkin.venue.name + ' through LouPass! <br><br><p><a href="javascript:close()">Close</a></p>');
 				overlay();
 			}
 		})
@@ -153,6 +159,8 @@ function printBadges(){
   var badges = $('.myBadges').html();
   oldPage = $('body').html();
   $('body').html("<html><head><title></title></head><body>" + badges + "</body>");
+  $('img').width(180);
+  $('img').css('margin', '20px');
   window.print();
   $('body').html(oldPage);
 }
