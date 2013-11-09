@@ -1,18 +1,5 @@
 var user_access_token = window.location.search.substring(14);
 var user_info, user_id, first_name, last_name, venue_history;
-var venues = [
-	{name: 'Galt House Hotel', beenHere: 0},
-	{name: "Muhammad Ali Center", beenHere: 0},
-	{name: "Kentucky Museum of Art and Craft (KMAC)", beenHere: 0},
-	{name: "Churchill Downs", beenHere: 0}, 
-	{name: "Joe Huber's Family Farm & Rest.", beenHere: 0},
-	{name: "Louisville Slugger Museum & Factory", beenHere: 0}, 
-	{name: "Belle of Louisville", beenHere: 0}, 
-	{name: "Cave Hill National Cemetery", beenHere: 0}, 
-	{name: "Kentucky Derby Museum", beenHere: 0},
-	{name: "Kentucky Science Center", beenHere: 0}, 
-	{name: "Louisville Mega Cavern", beenHere: 0}
-]
 
 function loupass(){
 	getUser();
@@ -58,17 +45,33 @@ function checkPlace(){
 		if(venues[i].beenHere === 0) {
 			venues[i].beenHere = false;
 		}
-	}
+	}	
 	buildList();
 }
 
 function buildList(){
 	$('.list table').append('<tr><td>Place</td><td>Been there?</td></tr>')
 	for (var i=0; i<venues.length; i++){
-		$('.list table').append('<tr><td>' + venues[i].name + '</td><td>' + venues[i].beenHere + '</td></tr>')
+		if (venues[i].beenHere === true) {
+			$('.list table').append('<tr><td>' + venues[i].name + '</td><td>PUT A REAL BADGE HERE</td></tr>')
+		} else {
+			$('.list table').append('<tr><td>' + venues[i].name +'</td><td>PUT A PLACEHOLDER HERE</td></tr>')
+		}
 	}
+}
+
+function toggleViews(){
+	$('#list').click(function(){
+		$('.dashboard').css('display', 'none');
+		$('.list').css('display', 'block');
+	});
+	$('#dashboard').click(function(){
+		$('.list').css('display', 'none');
+		$('.dashboard').css('display', 'block');
+	});
 }
 
 $(document).ready(function(){
 	loupass();
+	toggleViews();
 });
