@@ -101,6 +101,8 @@ function dashboard(){
 			$('.badges').append('<img src=' + venues[i].link + ' width="80" />');
 		}
 	}
+	$('.badges').append('<br><div class="button print"><h5>Print My Badges!</h5></div>');
+	printBadges();
 }
 
 var checkin_id, check;
@@ -117,6 +119,19 @@ function checkin() {
 				alert('you checked in to here!');
 			}
 		})
+	})
+}
+
+function printBadges(){
+	$('.print').click(function(){
+    var badges = $('.badges').html();
+    console.log(badges);
+    var page = document.body.innerHTML;
+    document.body.innerHTML = 
+      "<html><head><title></title></head><body>" + 
+      badges + "</body>";
+    window.print();
+    document.body.innerHTML = page;
 	})
 }
 
