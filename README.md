@@ -12,7 +12,14 @@ Check out our [live demo](https://www.loupass.com).
 
 
 
+
+
+
+
+
+
+
 ___
 
 
-[Hacktucky](http://www.hacktucky.com/)
+Built and Shipped in 24 hours at [Hacktucky](http://www.hacktucky.com/)
