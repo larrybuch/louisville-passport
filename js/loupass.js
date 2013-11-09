@@ -61,7 +61,7 @@ function buildList(){
 				venues[i].name +
 				'</h2><p class="label">about</p><p class="description">' +
 				venues[i].Description
-				+ '</p><div class="button"id="checkin" data-id=' 
+				+ '</p><div class="button"id="checkin" data-venueid=' 
 				+ venues[i].VenueID
 				+ '</p><div class="button">check-in</div></div>');
 
@@ -73,7 +73,7 @@ function buildList(){
 				venues[i].name +
 				'</h2><p class="label">about</p><p class="description">' +
 				venues[i].Description
-				+ '</p><div class="button"id="checkin" data-id=' 
+				+ '</p><div class="button"id="checkin" data-venueid=' 
 				+ venues[i].VenueID
 				+ '</p><div class="button">check-in</div></div>');
 		}
