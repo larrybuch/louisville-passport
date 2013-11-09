@@ -13,7 +13,7 @@ body{
 
 h1{
   font-family: "rooney-sans",sans-serif;
-  font-size: 4em;
+  font-size: 5em;
   font-weight: 900;
   letter-spacing: -1px;
   color: #fff;
@@ -29,7 +29,7 @@ h3{
 }
 
 h5{
-  font-size: 1.4em;
+  font-size: 2em;
   line-height: 1.2;
 }
 
@@ -205,6 +205,13 @@ a h4{
 
 .tag p.no{
 
+}
+
+.tagline{
+  font-family: "rooney-sans",sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
 }
 
 
