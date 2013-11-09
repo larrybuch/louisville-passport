@@ -61,7 +61,7 @@ function buildList(){
 				venues[i].name +
 				'</h2><p class="label">about</p><p class="description">' +
 				venues[i].Description
-				+ '</p><div class="button"id="checkin" data-venueid=' 
+				+ '</p><div class="button checkin" data-venueid=' 
 				+ venues[i].VenueID
 				+ '>check-in</div></div>');
 
@@ -73,7 +73,7 @@ function buildList(){
 				venues[i].name +
 				'</h2><p class="label">about</p><p class="description">' +
 				venues[i].Description
-				+ '</p><div class="button"id="checkin" data-venueid=' 
+				+ '</p><div class="button checkin" data-venueid=' 
 				+ venues[i].VenueID
 				+ '>check-in</div></div>');
 		}
@@ -101,17 +101,19 @@ function dashboard(){
 	}
 }
 
-var checkin_id;
+var checkin_id, check;
 function checkin() {
-	$('#checkin').click(function(){
-		checkin_id = $(this).getAttribute("data-id");
-		console.log(checkin_id)
+	$('.checkin').click(function(){
+		checkin_id = $(this).data("venueid");
 		$.ajax({
 			type: "GET",
-			url: "https://api.foursquare.com/v2/users/" + user_id + "/venuehistory?oauth_token=" + user_access_token,
+			method: "post",
+			url: "https://api.foursquare.com/v2/checkins/add?venueId=" + checkin_id + "&oauth_token=" + user_access_token,
 			dataType: "json",
 			success:function(data){
-				}
+				check = data;
+				alert('you checked in to here!');
+			}
 		})
 	})
 }
