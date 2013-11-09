@@ -1,3 +1,8 @@
+/*box model hack*/
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
 body{
   background-color: #e74c3c;
   font-family: "rooney-web",sans-serif;
@@ -74,6 +79,7 @@ tr{
 /* PAGE TOP STYLES */
 .page-top{
   margin-top: 20px;
+  margin-bottom: 50px;
   padding-bottom: 8px;
   border-bottom: 4px solid #c0392b;
 }
@@ -83,7 +89,7 @@ a h4{
   font-weight: 900;
   font-size: 1.4em;
   display: inline;
-  color: #ecf0f1;
+  color: white;
 }
 
 .page-top a{
@@ -112,6 +118,58 @@ a h4{
   color:#34495e;
 }
 
+/*VENUE STYLES*/
+
+.venue{
+  background-color: #ecf0f1;
+  padding: 20px;
+  color: #2c3e50;
+  line-height: 1.35;
+  margin-bottom: 25px !important;
+  border-bottom: 4px solid #bdc3c7;
+  border-radius: 3px;
+  transition: .2s all;
+}
+
+.venue:hover{
+  background-color: white;
+  border-bottom-color: #ecf0f1;
+}
+
+.venue img{
+  width: 100%;
+}
+
+.venue h2{
+  font-family: "rooney-sans",sans-serif;
+  font-weight: 900;
+  font-size: 1.7em;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.venue .button{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  transition: .2s all;  
+}
+
+.hours{
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.label{
+  font-family: "rooney-sans",sans-serif;
+  font-weight: 900; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
 
 
 
