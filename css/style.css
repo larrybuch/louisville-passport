@@ -345,4 +345,7 @@ footer{
   h5{
     font-size: 1.5em;
   }
+  #overlay {
+    height: 100%;
+  }
 }
