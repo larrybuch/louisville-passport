@@ -47,15 +47,31 @@ function checkPlace(){
 		}
 	}	
 	buildList();
+	dashboard();
 }
 
 function buildList(){
 	$('.list table').append('<tr><td>Place</td><td>Been there?</td></tr>')
 	for (var i=0; i<venues.length; i++){
 		if (venues[i].beenHere === true) {
-			$('.list table').append('<tr><td>' + venues[i].name + '</td><td>PUT A REAL BADGE HERE</td></tr>')
+			$('.container').append(
+				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="yes">yes</p> </div> <img src="' 
+				+ venues[i].Photo 
+				+ '" /><h2>' 
+				+ venues[i].name 
+				+ '</h2><p class="label">about</p><p class="description">' 
+				+ venues[i].Description 
+				+ '</p><div class="button">check-in</div></div>');
+
 		} else {
-			$('.list table').append('<tr><td>' + venues[i].name +'</td><td>PUT A PLACEHOLDER HERE</td></tr>')
+			$('.container').append(
+				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="no">no</p> </div> <img src="' 
+				+ venues[i].Photo 
+				+ '" /><h2>' 
+				+ venues[i].name 
+				+ '</h2><p class="label">about</p><p class="description">' 
+				+ venues[i].Description 
+				+ '</p><div class="button">check-in</div></div>');
 		}
 	}
 }
@@ -69,6 +85,15 @@ function toggleViews(){
 		$('.list').css('display', 'none');
 		$('.dashboard').css('display', 'block');
 	});
+}
+
+function dashboard(){
+	for (var i=0; i<venues.length; i++){
+		if (venues[i].beenHere === true) {
+			$(".visited ul").append('<li>' + venues[i].name + '</li>');
+			$('.badges').append('<img src=' + venues[i].link + ' width="80" />');
+		}
+	}
 }
 
 $(document).ready(function(){
