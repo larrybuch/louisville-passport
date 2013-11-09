@@ -1,3 +1,22 @@
+//set up tabletop
+
+var venues;
+window.onload = function() { init() };
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Au6tPA8zI59ndGFLMGNUajg4OWk3Q3E1V3V2X2hpZFE&single=true&gid=0&output=html';
+
+  function init() {
+    Tabletop.init( { key: public_spreadsheet_url,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+
+  function showInfo(data, tabletop) {
+    alert("Successfully processed!")
+    venues = data;
+    loupass();
+  }
+
+
 var user_access_token = window.location.search.substring(14);
 var user_info, user_id, first_name, last_name, venue_history;
 
@@ -58,16 +77,16 @@ function buildList(){
 		if (venues[i].beenHere === true) {
 			// get the venues category and a
 			for (var j=0; j<badges.length; j++){
-				if (venues[i].Category === badges[j].category) {
+				if (venues[i].category === badges[j].category) {
 					badges[j].count ++
 				}
 			}
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="yes">yes</p><p class="category-name">'+  venues[i].Category + '</p><img src="' + venues[i].badgeLink +'" width="20" class="small-badge" /></div> <img src="' + venues[i].Photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' +venues[i].Description + '<p class="label">address</p><p class="description">' + venues[i].Address + '</p><div class="button checkin" data-venueid='+ venues[i].VenueID + '>check-in</div></div>');
+				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="yes">yes</p><p class="category-name">'+  venues[i].category + '</p><img src="' + venues[i].badgelink +'" width="20" class="small-badge" /></div> <img src="' + venues[i].photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><div class="button checkin" data-venueid='+ venues[i].VenueID + '>check-in</div></div>');
 
 		} else {
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="no">no</p><p class="category-name">'+  venues[i].Category + '</p><img src="' + venues[i].badgeLink +'" width="20" class="small-badge grayscale" /></div> <img src="' + venues[i].Photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].Description + '</p><div class="button checkin" data-venueid=' + venues[i].VenueID + '>check-in</div></div>');
+				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="no">no</p><p class="category-name">'+  venues[i].category + '</p><img src="' + venues[i].badgelink +'" width="20" class="small-badge grayscale" /></div> <img src="' + venues[i].photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].description + '</p><p class="label">address</p><p class="description">' + venues[i].address + '</p><div class="button checkin" data-venueid=' + venues[i].VenueID + '>check-in</div></div>');
 		}
 	}
 	checkin();
@@ -128,6 +147,5 @@ function printBadges(){
 }
 
 $(document).ready(function(){
-	loupass();
 	toggleViews();
 });
