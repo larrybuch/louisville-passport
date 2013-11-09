@@ -1,6 +1,6 @@
 var user_access_token = window.location.search.substring(14);
 var user_info, user_id, first_name, last_name, venue_history;
-var matches = [
+var venues = [
 	{name: 'Galt House Hotel', beenHere: 0},
 	{name: "Muhammad Ali Center", beenHere: 0},
 	{name: "Kentucky Museum of Art and Craft (KMAC)", beenHere: 0},
@@ -44,14 +44,20 @@ function getHistory(){
 
 function checkPlace(){
 	for (var i=0; i<venue_history.length; i++) {
-		for (var j=0; j<matches.length; j++){
-			if (venue_history[i].venue.name === matches[j].name){
-				matches[j].beenHere = true;
+		for (var j=0; j<venues.length; j++){
+			if (venue_history[i].venue.name === venues[j].name){
+				venues[j].beenHere = true;
 			}
 		}
 	}
+	buildList();
 }
 
+function buildList(){
+	for (var i=0; i<venues.length; i++){
+		$('.list table').append('<tr><td>' + venues[i].name + '</td><td>' + venues[i].beenHere + '</td></tr>')
+	}
+}
 
 $(document).ready(function(){
 	getUser();
