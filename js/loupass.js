@@ -15,7 +15,7 @@ function getUser(){
 			user_id = user_info.response.user.id;
 			first_name = user_info.response.user.firstName;
 			last_name = user_info.response.user.lastName;
-			$('.info').html('<h1>Hi ' + first_name + " " + last_name + "!</h1>");
+			$('.info').html('<h1>Hi, ' + first_name + '!</h1>');
 			getHistory();
 		}
 	})
