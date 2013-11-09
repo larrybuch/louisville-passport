@@ -85,8 +85,10 @@ function toggleViews(){
 	$('#list').click(function(){
 		$('.dashboard').css('display', 'none');
 		$('.list').css('display', 'block');
+		$('.venue').css('display', 'block');
 	});
 	$('#dashboard').click(function(){
+		$('.venue').css('display', 'none');
 		$('.list').css('display', 'none');
 		$('.dashboard').css('display', 'block');
 	});
