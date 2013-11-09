@@ -1,5 +1,6 @@
 var user_access_token = window.location.search.substring(14);
 var user_info, user_id, first_name, last_name, venue_history;
+var badges = [{'category': 'art', 'link': "/img/art.svg"}, {'category': 'business', 'link': "/img/business.svg"}, {'category': 'civic', 'link': "/img/civic.svg"}, {'category': 'culture', 'link': "/img/culture.svg"}, {'category': 'festival', 'link': "/img/festival.svg"}, {'category': 'science', 'link': "/img/science.svg"}, {'category': 'sports', 'link': "/img/sports.svg"}]
 
 function loupass(){
 	getUser();
@@ -81,11 +82,10 @@ function dashboard(){
 	for (var i=0; i<venues.length; i++){
 		if (venues[i].beenHere === true) {
 			$(".visited ul").append('<li>' + venues[i].name + '</li>');
-			$('.badgesIcon').append('<img src=' + venues[i].badgeLink + ' width="80" />');
+			$('.myBadges').append('<img src=' + venues[i].badgeLink + ' width="80" />');
 		}
 	}
 	$('.badges').append('<br><div class="button print" onClick="printBadges()"><h5>Print My Badges!</h5></div>');
-	// printBadges();
 }
 
 var checkin_id, check;
@@ -100,7 +100,7 @@ function checkin() {
 			success:function(data){
 				check = data;
 				alert('you checked in to here!');
-				location.reload();
+				// location.reload();
 			}
 		})
 	})
@@ -108,7 +108,7 @@ function checkin() {
 
 var oldPage;
 function printBadges(){
-  var badges = $('.badgesIcon').html();
+  var badges = $('.myBadges').html();
   oldPage = $('body').html();
   $('body').html("<html><head><title></title></head><body>" + badges + "</body>");
   window.print();
