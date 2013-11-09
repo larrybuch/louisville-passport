@@ -54,10 +54,28 @@ function buildList(){
 	$('.list table').append('<tr><td>Place</td><td>Been there?</td></tr>')
 	for (var i=0; i<venues.length; i++){
 		if (venues[i].beenHere === true) {
-			$('.container').append('<div class="venue four columns"><p>BEEN THERE DONE THAT</p><img src="' + venues[i].Photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].Description + '</p><div class="button" id="checkin" data-id=' + venues[i].VenueID + '>check-in</div></div>');
+			$('.container').append(
+				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="yes">yes</p> </div> <img src="' 
+				+ venues[i].Photo 
+				+ '" /><h2>' 
+				+ venues[i].name 
+				+ '</h2><p class="label">about</p><p class="description">' 
+				+ venues[i].Description 
+				+ '</p><div class="button"id="checkin" data-id=' 
+				+ venues[i].VenueID 
+				+ '>check-in</div></div>');
 
 		} else {
-			$('.container').append('<div class="venue four columns"><img src="' + venues[i].Photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].Description + '</p><div class="button" id="checkin" data-id=' + venues[i].VenueID + '>check-in</div></div>');
+			$('.container').append(
+				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="no">no</p> </div> <img src="' 
+				+ venues[i].Photo 
+				+ '" /><h2>' 
+				+ venues[i].name 
+				+ '</h2><p class="label">about</p><p class="description">' 
+				+ venues[i].Description
+				+ '</p><div class="button"id="checkin" data-id=' 
+				+ venues[i].VenueID
+				+ '</p><div class="button">check-in</div></div>');
 		}
 	}
 	checkin();
