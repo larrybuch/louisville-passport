@@ -253,6 +253,14 @@ footer{
   margin-left: 4px;
 }
 
+#red{
+  color: #e74c3c;
+}
+
+.badge-row{
+  text-align: center;
+}
+
 @media only screen and (max-width: 767px){
   .venue{
     height: auto;
