@@ -62,10 +62,37 @@ tr{
   border-bottom: 4px solid #c0392b;
 }
 
-h4{
+a h4{
   font-family: "rooney-sans",sans-serif;
   font-weight: 900;
   font-size: 1.4em;
+  display: inline;
+  color: #ecf0f1;
+}
+
+.page-top a{
+  text-decoration: none;
+}
+.page-top a h4:hover{
+  color: #34495e;
+}
+
+.switch{
+  float: right;
+}
+
+.switch ul li{
+  display: inline;
+}
+
+.switch a {
+  color: #ecf0f1;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.switch a:hover{
+  color:#34495e;
 }
 
 
