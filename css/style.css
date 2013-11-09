@@ -188,7 +188,8 @@ a h4{
   color: #7f8c8d;
   margin-top: 10px;
 }
-a.label {
+
+.venue > a {
   text-decoration: none;
   margin-top: 20px;
   color: #7f8c8d;
