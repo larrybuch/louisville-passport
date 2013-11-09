@@ -63,11 +63,11 @@ function buildList(){
 				}
 			}
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="yes">yes</p> </div> <img src="' + venues[i].Photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' +venues[i].Description + '<p class="label">address</p><p class="description">' + venues[i].Address + '</p><div class="button checkin" data-venueid='+ venues[i].VenueID + '>check-in</div></div>');
+				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="yes">yes</p><p class="category-name">'+  venues[i].Category + '</p><img src="' + venues[i].badgeLink +'" width="20" class="small-badge" /></div> <img src="' + venues[i].Photo + '" /><h2>' + venues[i].name + '</h2><p class="label">about</p><p class="description">' +venues[i].Description + '<p class="label">address</p><p class="description">' + venues[i].Address + '</p><div class="button checkin" data-venueid='+ venues[i].VenueID + '>check-in</div></div>');
 
 		} else {
 			$('.container').append(
-				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="no">no</p> </div> <img src="' + venues[i].Photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].Description + '</p><div class="button checkin" data-venueid=' + venues[i].VenueID + '>check-in</div></div>');
+				'<div class="venue one-third column"> <div class="tag"> <p>been there?</p> <p class="no">no</p><p class="category-name">'+  venues[i].Category + '</p><img src="' + venues[i].badgeLink +'" width="20" class="small-badge grayscale" /></div> <img src="' + venues[i].Photo +	'" /><h2>'+ venues[i].name + '</h2><p class="label">about</p><p class="description">' + venues[i].Description + '</p><div class="button checkin" data-venueid=' + venues[i].VenueID + '>check-in</div></div>');
 		}
 	}
 	checkin();
