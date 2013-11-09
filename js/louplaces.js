@@ -1,4 +1,4 @@
-var venues = [{"name":"Muhammad Ali Center","VenueID":"4b3134f0f964a5209b0225e3","Category":"history","beenHere":0,"":null,"":"culture"},
+var venues = [{"name":"Muhammad Ali Center","VenueID":"4b3134f0f964a5209b0225e3","Category":"history","beenHere":0,"":null,"":"culture", 'link': '/img/US_Marshal_Badge.png'},
 {"name":"Kentucky Museum of Art and Craft (KMAC)","VenueID":"4b6cb984f964a520594f2ce3","Category":"art & culture","beenHere":0,"":null,"":"art"},
 {"name":"Churchill Downs","VenueID":"4b0933a7f964a520b31423e3","Category":"outdoors","beenHere":0,"":null,"":""},
 {"name":"Joe Huber's Family Farm & Rest.","VenueID":"4c003dadf61ea5938592eb13","Category":"outdoors","beenHere":0,"":null,"":"category"},
