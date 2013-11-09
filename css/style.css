@@ -239,5 +239,8 @@ footer{
     -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 }
 
+.small-badge {
+  width: 30px !important;
+}
 
 
